@@ -1,4 +1,5 @@
 import { moneyFormat } from "../helpers";
+import { Data } from "./Data";
 
 export const SingleItem = ({price, type, id, eliminarItem, editarItem}) => {
 
@@ -18,7 +19,7 @@ export const SingleItem = ({price, type, id, eliminarItem, editarItem}) => {
         }
     }
 
-    const urlImage=`./src/assets/${type}.png`;
+    const urlImage= Data.find(item => item.name === type).image;
 
     return (
         <div className="single-item">
